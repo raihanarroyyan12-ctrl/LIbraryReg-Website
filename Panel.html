@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengelolaan Anggota - LibraryReg</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="container nav-bar">
+        <a class="logo-container" href="index.html">
+          <img src="C:\Users\Public\Coding\ETS Perpus\image\Screenshot 2026-10-21 103144.png" alt="Logo LibraryReg" class="logo-img" />
+          <span class="logo-text">LibraryReg</span>
+        </a>
+        <input type="checkbox" id="nav-toggle" class="nav-check" aria-label="Buka menu" />
+        <label for="nav-toggle" class="nav-toggle">Menu</label>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="anggota.html">Daftar Anggota</a></li>
+            <li><a href="daftar.html">Pendaftaran</a></li>
+            <li><a href="petugas.html" class="active" aria-current="page">Login Petugas</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="container content-section">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+          <h2 class="mb-0">Pengelolaan anggota</h2>
+          <a class="btn btn-outline-dark" href="petugas.html">Keluar</a>
+        </div>
+        <div class="notice notice-ok" id="ok">Data anggota berhasil diperbarui.</div>
+        <div class="notice notice-err" id="terhapus">Data anggota berhasil dihapus.</div>
+        <form class="mb-3" action="panel.html" method="get">
+          <input
+            class="form-control"
+            type="search"
+            name="q"
+            placeholder="Cari nama atau NIM/NIP"
+            aria-label="Cari anggota"
+          />
+        </form>
+        <div class="table-responsive">
+          <table class="table table-striped align-middle">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>NIM/NIP</th>
+                <th>Program studi</th>
+                <th>Jenis</th>
+                <th class="text-end">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alya Putri</td>
+                <td>210101001</td>
+                <td>Teknik Informatika</td>
+                <td>Mahasiswa</td>
+                <td class="text-end text-nowrap">
+                  <a class="btn btn-sm btn-outline-dark" href="#detail-1">Detail</a>
+                  <a class="btn btn-sm btn-outline-dark" href="#edit-1">Edit</a>
+                  <a class="btn btn-sm btn-outline-danger" href="#hapus-1">Hapus</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Dr. Budi Santoso</td>
+                <td>197801012005</td>
+                <td>Sistem Informasi</td>
+                <td>Dosen</td>
+                <td class="text-end text-nowrap">
+                  <a class="btn btn-sm btn-outline-dark" href="#detail-2">Detail</a>
+                  <a class="btn btn-sm btn-outline-dark" href="#edit-2">Edit</a>
+                  <a class="btn btn-sm btn-outline-danger" href="#hapus-2">Hapus</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Citra Lestari</td>
+                <td>198905152015</td>
+                <td>Administrasi</td>
+                <td>Tenaga Kependidikan</td>
+                <td class="text-end text-nowrap">
+                  <a class="btn btn-sm btn-outline-dark" href="#detail-3">Detail</a>
+                  <a class="btn btn-sm btn-outline-dark" href="#edit-3">Edit</a>
+                  <a class="btn btn-sm btn-outline-danger" href="#hapus-3">Hapus</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <div class="modal-box" id="detail-1">
+        <a class="modal-bg" href="#" aria-label="Tutup"></a>
+        <div class="modal-card">
+          <h3>Detail anggota</h3>
+          <dl class="row mb-3">
+            <dt class="col-sm-5">Nama lengkap</dt>
+            <dd class="col-sm-7">Alya Putri</dd>
+            <dt class="col-sm-5">NIM/NIP</dt>
+            <dd class="col-sm-7">210101001</dd>
+            <dt class="col-sm-5">Program studi</dt>
+            <dd class="col-sm-7">Teknik Informatika</dd>
+            <dt class="col-sm-5">Alamat</dt>
+            <dd class="col-sm-7">Jl. Mawar 12, Surabaya</dd>
+            <dt class="col-sm-5">Nomor telepon</dt>
+            <dd class="col-sm-7">081234567890</dd>
+            <dt class="col-sm-5">Email</dt>
+            <dd class="col-sm-7">alya@mail.com</dd>
+            <dt class="col-sm-5">Jenis keanggotaan</dt>
+            <dd class="col-sm-7">Mahasiswa</dd>
+          </dl>
+          <a class="btn btn-outline-dark" href="#">Tutup</a>
+        </div>
+      </div>
+      <div class="modal-box" id="edit-1">
+        <a class="modal-bg" href="#" aria-label="Tutup"></a>
+        <form class="modal-card" action="panel.html#ok" method="get">
+          <h3>Edit anggota</h3>
+          <label class="form-label">Nama lengkap</label>
+          <input class="form-control mb-2" value="Alya Putri" required />
+          <label class="form-label">NIM/NIP</label>
+          <input class="form-control mb-2" value="210101001" pattern="[0-9]+" required />
+          <label class="form-label">Program studi</label>
+          <input class="form-control mb-2" value="Teknik Informatika" required />
+          <label class="form-label">Alamat</label>
+          <input class="form-control mb-2" value="Jl. Mawar 12, Surabaya" required />
+          <label class="form-label">Nomor telepon</label>
+          <input class="form-control mb-2" value="081234567890" required />
+          <label class="form-label">Email</label>
+          <input class="form-control mb-2" type="email" value="alya@mail.com" required />
+          <label class="form-label">Jenis keanggotaan</label>
+          <select class="form-select mb-3">
+            <option selected>Mahasiswa</option>
+            <option>Dosen</option>
+            <option>Tenaga Kependidikan</option>
+          </select>
+          <button class="btn btn-accent" type="submit">Simpan perubahan</button>
+          <a class="btn btn-outline-dark" href="#">Batal</a>
+        </form>
+      </div>
+      <div class="modal-box" id="hapus-1">
+        <a class="modal-bg" href="#" aria-label="Tutup"></a>
+        <div class="modal-card">
+          <p class="fw-semibold">Data ini akan dihapus.</p>
+          <a class="btn btn-danger" href="panel.html#terhapus">Hapus</a>
+          <a class="btn btn-outline-dark" href="#">Batal</a>
+        </div>
+      </div>
+      <div class="modal-box" id="detail-2">
+        <a class="modal-bg" href="#" aria-label="Tutup"></a>
+        <div class="modal-card">
+          <h3>Detail anggota</h3>
+          <dl class="row mb-3">
+            <dt class="col-sm-5">Nama lengkap</dt>
+            <dd class="col-sm-7">Dr. Budi Santoso</dd>
+            <dt class="col-sm-5">NIM/NIP</dt>
+            <dd class="col-sm-7">197801012005</dd>
+            <dt class="col-sm-5">Program studi</dt>
+            <dd class="col-sm-7">Sistem Informasi</dd>
+            <dt class="col-sm-5">Alamat</dt>
+            <dd class="col-sm-7">Jl. Melati 5, Sidoarjo</dd>
+            <dt class="col-sm-5">Nomor telepon</dt>
+            <dd class="col-sm-7">082233445566</dd>
+            <dt class="col-sm-5">Email</dt>
+            <dd class="col-sm-7">budi@kampus.ac.id</dd>
+            <dt class="col-sm-5">Jenis keanggotaan</dt>
+            <dd class="col-sm-7">Dosen</dd>
+          </dl>
+          <a class="btn btn-outline-dark" href="#">Tutup</a>
+        </div>
+      </div>
+      <div class="modal-box" id="edit-2">
+        <a class="modal-bg" href="#" aria-label="Tutup"></a>
+        <form class="modal-card" action="panel.html#ok" method="get">
+          <h3>Edit anggota</h3>
+          <label class="form-label">Nama lengkap</label>
+          <input class="form-control mb-2" value="Dr. Budi Santoso" required />
+          <label class="form-label">NIM/NIP</label>
+          <input class="form-control mb-2" value="197801012005" pattern="[0-9]+" required />
+          <label class="form-label">Program studi</label>
+          <input class="form-control mb-2" value="Sistem Informasi" required />
+          <label class="form-label">Alamat</label>
+          <input class="form-control mb-2" value="Jl. Melati 5, Sidoarjo" required />
+          <label class="form-label">Nomor telepon</label>
+          <input class="form-control mb-2" value="082233445566" required />
+          <label class="form-label">Email</label>
+          <input class="form-control mb-2" type="email" value="budi@kampus.ac.id" required />
+          <label class="form-label">Jenis keanggotaan</label>
+          <select class="form-select mb-3">
+            <option>Mahasiswa</option>
+            <option selected>Dosen</option>
+            <option>Tenaga Kependidikan</option>
+          </select>
+          <button class="btn btn-accent" type="submit">Simpan perubahan</button>
+          <a class="btn btn-outline-dark" href="#">Batal</a>
+        </form>
+      </div>
+      <div class="modal-box" id="hapus-2">
+        <a class="modal-bg" href="#" aria-label="Tutup"></a>
+        <div class="modal-card">
+          <p class="fw-semibold">Data ini akan dihapus.</p>
+          <a class="btn btn-danger" href="panel.html#terhapus">Hapus</a>
+          <a class="btn btn-outline-dark" href="#">Batal</a>
+        </div>
+      </div>
+      <div class="modal-box" id="detail-3">
+        <a class="modal-bg" href="#" aria-label="Tutup"></a>
+        <div class="modal-card">
+          <h3>Detail anggota</h3>
+          <dl class="row mb-3">
+            <dt class="col-sm-5">Nama lengkap</dt>
+            <dd class="col-sm-7">Citra Lestari</dd>
+            <dt class="col-sm-5">NIM/NIP</dt>
+            <dd class="col-sm-7">198905152015</dd>
+            <dt class="col-sm-5">Program studi</dt>
+            <dd class="col-sm-7">Administrasi</dd>
+            <dt class="col-sm-5">Alamat</dt>
+            <dd class="col-sm-7">Jl. Kenanga 8, Surabaya</dd>
+            <dt class="col-sm-5">Nomor telepon</dt>
+            <dd class="col-sm-7">085611223344</dd>
+            <dt class="col-sm-5">Email</dt>
+            <dd class="col-sm-7">citra@kampus.ac.id</dd>
+            <dt class="col-sm-5">Jenis keanggotaan</dt>
+            <dd class="col-sm-7">Tenaga Kependidikan</dd>
+          </dl>
+          <a class="btn btn-outline-dark" href="#">Tutup</a>
+        </div>
+      </div>
+      <div class="modal-box" id="edit-3">
+        <a class="modal-bg" href="#" aria-label="Tutup"></a>
+        <form class="modal-card" action="panel.html#ok" method="get">
+          <h3>Edit anggota</h3>
+          <label class="form-label">Nama lengkap</label>
+          <input class="form-control mb-2" value="Citra Lestari" required />
+          <label class="form-label">NIM/NIP</label>
+          <input class="form-control mb-2" value="198905152015" pattern="[0-9]+" required />
+          <label class="form-label">Program studi</label>
+          <input class="form-control mb-2" value="Administrasi" required />
+          <label class="form-label">Alamat</label>
+          <input class="form-control mb-2" value="Jl. Kenanga 8, Surabaya" required />
+          <label class="form-label">Nomor telepon</label>
+          <input class="form-control mb-2" value="085611223344" required />
+          <label class="form-label">Email</label>
+          <input class="form-control mb-2" type="email" value="citra@kampus.ac.id" required />
+          <label class="form-label">Jenis keanggotaan</label>
+          <select class="form-select mb-3">
+            <option>Mahasiswa</option>
+            <option>Dosen</option>
+            <option selected>Tenaga Kependidikan</option>
+          </select>
+          <button class="btn btn-accent" type="submit">Simpan perubahan</button>
+          <a class="btn btn-outline-dark" href="#">Batal</a>
+        </form>
+      </div>
+      <div class="modal-box" id="hapus-3">
+        <a class="modal-bg" href="#" aria-label="Tutup"></a>
+        <div class="modal-card">
+          <p class="fw-semibold">Data ini akan dihapus.</p>
+          <a class="btn btn-danger" href="panel.html#terhapus">Hapus</a>
+          <a class="btn btn-outline-dark" href="#">Batal</a>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <h3>Kontak</h3>
+            <p class="mb-1">Gedung Perpustakaan Kampus, Surabaya</p>
+            <p class="mb-1">Telepon: (031) 555-0123</p>
+            <p class="mb-0">Email: LibraryReg@gmail.com</p>
+          </div>
+          <div class="col-md-6">
+            <h3>Jam layanan</h3>
+            <p class="mb-1">Senin - Jumat: 08.00 - 20.00</p>
+            <p class="mb-1">Sabtu: 08.00 - 14.00</p>
+            <p class="mb-0">Minggu dan hari libur: tutup</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
